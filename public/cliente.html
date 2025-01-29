@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+            <!--Dados para Navegador-->
+            <meta charset="UTF-8">
+            <meta http-equiv="X-UA-Compatible" content="IE=edge">
+            <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0">
+            <meta name="description" content="Programadores Front-End & Back-End, Senai.">
+            <meta name="keywords" content="HTML, CSS, JavaScript, Senai">
+            <meta name="author" content="Danilo Alan"> 
+            <meta name="author" content="Gabriel Rocha Silva Machado">
+            <meta name="author" content="Lucas Farrapo"> 
+            <meta name="author" content="William Araujo">
+            <!--Titulo do Site--> 
+            <title>Walk & Dog</title>
+            <link rel="stylesheet" href="/imagens/walkedog.svg">
+            <!-- Carregar um arquivo SVG como se fosse CSS. -->
+            <link rel="stylesheet" href="css/style.css">
+            <link rel="stylesheet" href="css/register.css">
+            <!-- Importar os arquivos CSS para a estilização. -->
+            
+</head>
+<body>
+    <!-- Corpo principal do documento HTML. -->
+    <header>
+        <!-- Cabeçalho da página. -->
+        <nav class="menu">
+                <button id="open-side-menu" class="open-side-menu">☰</button>
+                <!-- Botão de abertura do menu lateral. -->
+            <aside class="side-menu" id="side-menu">
+                <!-- Menu lateral. -->
+                <button id="close-side-menu" class="close-side-menu">&times;</button>
+                <!-- Botão de fechamento do menu lateral. -->
+                <ul>
+                    <!-- Lista de links presentes no menu lareal. -->
+                    <li class="item-menu"><a href="index.html">Início</a></li>
+                    <li class="item-menu"><a href="sobre.html">Sobre</a></li>
+                    <li class="item-menu"><a href="galeria.html">Galeria</a></li>
+                    <li class="item-menu"><a href="contato.html">Contato</a></li>
+                    <li class="item-menu"><a href="cliente.html">Sua Conta</a></li>
+                    <li class="item-menu"><a href="#">Agenda</a></li>
+                    <li class="item-menu"><a href="#">Histórico</a></li>
+                </ul>
+            </aside>
+        </nav>
+        <nav class="menu">
+            <a href="/index.html">
+                <img class="logo-2" src="/imagens/walkedogverdeclaro.png" alt="logo">
+            </a>
+            <!-- Link que redireciona para a página inicial através do logotipo. -->
+        </nav>
+            <div class="bots">
+                <!-- Div para os botões de login e registro. -->
+                <div class="logout">
+                <nav>
+                    <button id="logout-btn" class="logout-btn" onclick="logoutUser()">Sair</button>
+                </nav>
+            </div>   
+            </div> 
+    </header>
+    <div class="main-content">
+    <main class="corpo-cliente">
+        <nav class="conteudocliente">
+            <div class="clientPerfil">
+                <button class="client-button-data" id="client-button-data">Perfil do Cliente</button>
+                
+                <div class="modal" id="modalClient">
+                    <div class="modal-content client-modal">
+                        <span class="close" id="close-btn-client">&times;</span>
+                        
+                        <h2>Perfil do Cliente</h2>
+                        <div class="clientperfildesc">
+                            <p><strong>Nome:</strong> <span id="client-nome"></span></p>
+                        </div>
+                        
+                        <div class="clientperfildesc">
+                            <p><strong>Raça do Pet:</strong> <span id="client-raca"></span></p>
+                        </div>
+                        
+                        <div class="clientperfildesc">
+                            <p><strong>Peso do Pet:</strong> <span id="client-peso"></span></p>
+                        </div>
+                        
+                        <div class="clientperfildesc">
+                            <p><strong>Idade do Pet:</strong> <span id="client-idade"></span></p>
+                        </div>
+                        
+                        <div class="clientperfildesc">
+                            <p><strong>CPF do Dono:</strong> <span id="cpfDono"></span></p>
+                        </div>
+                        
+                        <div class="client-action-buttons">
+                            <button id="edit-profile">Alterar Dados</button>
+                            <button id="remove-profile">Remover Dados</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="pets">
+                <button id="pet-button" class="pet-button">Cadastre Seus Pets</button>
+                
+                <div class="modal-pet" id="pet-area">
+                    <div class="modal-content-pet">
+                        <div id="close-btn-pet" class="close-btn">&times;</div>
+                        <h2 class="petdado">Registrar seu pet</h2>
+                        <form class="form-pet" id="form-pet">
+                            <label class="petdados">Nome</label>
+                            <input id="nomePet" type="text"><br>
+                            <label class="petdados">Raça</label>
+                            <input id="raçaPet" type="text"><br>
+                            <label class="petdados">Peso</label>
+                            <input id="pesoPet" type="text"><br>
+                            <label class="petdados">Idade</label>
+                            <input id="idadePet" type="text"><br>
+                            <label class="petdados">CPF do Dono</label>
+                            <input id="cpfDono" type="text"><br>
+                            <button class="ent-but-pag-cliente" type="submit">Cadastrar</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="petPerfil">
+                <button class="pet-button-data" id="pet-button-data">Perfil do Pet</button>
+                
+                <div class="modal" id="modalpets">
+                    <div class="modal-content login-modal">
+                        <span class="close" id="close-btn-pets">&times;</span>
+                        
+                        <h2>Perfil do Pet</h2>
+                        <div class="dogperfildesc"><p><strong>Nome:</strong> <span id="pet-nome"></span></p></div>
+                        <div class="dogperfildesc"><p><strong>Raça:</strong> <span id="pet-raca"></span></p></div>
+                        <div class="dogperfildesc"><p><strong>Peso:</strong> <span id="pet-peso"></span></p></div>
+                        <div class="dogperfildesc"><p><strong>Idade:</strong> <span id="pet-idade"></span></p></div>
+                        <div class="dogperfildesc"><p><strong>CPF do Dono:</strong> <span id="cpfDono"></span></p></div>
+            
+                        <div class="login-botoes">
+                            <button id="login-submit">Alterar</button>
+                        </div>
+                    </div>
+                </div>       
+            </div>
+            
+            
+            <!-- <div class="pets">
+                <button id="pet-button" class="pet-button">Cadastre Seus Pets</button>
+                
+                <div class="modal-pet" id="pet-area">
+                    <div class="modal-content-pet">
+                        <div id="close-btn-pet" class="close-btn">&times;</div>
+                        <h2 class="petdado">Registrar seu pet</h2>
+                        <form class="form-pet" id="form-pet">
+                            <label class="petdados">Nome</label>
+                            <input id="nomePet" type="text"><br>
+                            <label class="petdados">Raça</label>
+                            <input id="raçaPet" type="text"><br>
+                            <label class="petdados">Peso</label>
+                            <input id="pesoPet" type="text"><br>
+                            <label class="petdados">Idade</label>
+                            <input id="idadePet" type="text"><br>
+                            <label class="petdados">CPF do Dono</label>
+                            <input id="cpfDono" type="text"><br>
+                            <button class="ent-but-pag-cliente" type="submit">Cadastrar</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="petPerfil">
+                <button class="pet-button-data" id="pet-button-data">Perfil do Pet</button>
+                
+                <div class="modal" id="modalpets">
+                    <div class="modal-content login-modal">
+                        <span class="close" id="close-btn-pets">&times;</span>
+                        
+                        <h2>Perfil do Pet</h2>
+                        <div class="dogperfildesc"><p><strong>Nome:</strong> <span id="pet-nome"></span></p></div>
+                        <div class="dogperfildesc"><p><strong>Raça:</strong> <span id="pet-raca"></span></p></div>
+                        <div class="dogperfildesc"><p><strong>Peso:</strong> <span id="pet-peso"></span></p></div>
+                        <div class="dogperfildesc"><p><strong>Idade:</strong> <span id="pet-idade"></span></p></div>
+                        <div class="dogperfildesc"><p><strong>CPF do Dono:</strong> <span id="cpfDono"></span></p></div>
+            
+                        <div class="login-botoes">
+                            <button id="login-submit">Alterar</button>
+                        </div>
+                    </div>
+                </div>       
+            </div> -->
+            
+            
+            </nav>
+    </main>
+    <footer class="roda-pe-geral">
+        <!-- Rodapé da página. -->
+        <div class="titulos-midias">
+            <!-- Seçaõ das redes sociais e formas de pagamento. -->
+                <span class="title-midia1">REDES SOCIAIS
+                    <div class="img-midia-icon">
+                    <a class="whats" href="https://wa.me/558695533463"><img src="/imagens/svg-whats.svg"></a>
+                    <a class="insta" href="https://www.instagram.com/gabr.ielmachadoooooo?igsh=dzhlcHMzdG1qa2I5"><img src="/imagens/svg-insta.svg"></a>
+                    <a class="youtube" href="https://www.youtube.com/"><img src="/imagens/svg-youtube.svg"></a>
+                    </div>  
+                </span>
+                <span class="title-midia2">Formas De Pagamento
+                    <div class="img-midia-1">
+                        <img class="imagem-midia" src="/imagens/visa-svg.svg" alt="visa">
+                        <img class="imagem-midia" src="/imagens/pix-svg.svg" alt="pix">
+                        <img class="imagem-midia" src="/imagens/mastercard-svg.svg" alt="mastercard">
+                    </div>
+                </span>
+        </div>
+        <hr>
+        <div class="marca-registrada">
+            <h4>© 2024 WALK & DOG - Todos os direitos reservados.</h4>
+            <!-- Texto de copyright. -->
+        </div>
+    </footer>
+    </div>
+
+    
+    
+<!-- Importação de arquivos JavaScript para funcionalidades da página. -->
+<script> 
+
+const perfilDogButton = document.getElementById("pet-button-data");
+const perfilDogmodal = document.getElementById("modalpets");
+const closeDogPerfilmodal = document.getElementById("close-btn-pets");
+
+// Função para preencher os dados do modal
+function preencherDadosDoModal() {
+    // Verificar se os dados do pet estão no localStorage
+    const nomePet = localStorage.getItem("nomePet");
+    const raçaPet = localStorage.getItem("raçaPet");
+    const pesoPet = localStorage.getItem("pesoPet");
+    const idadePet = localStorage.getItem("idadePet");
+    const cpfDono = localStorage.getItem("cpfDono");
+
+    // Preencher os dados no modal se estiverem disponíveis
+    if (nomePet && raçaPet && pesoPet && idadePet && cpfDono) {
+        document.getElementById("pet-nome").textContent = nomePet;
+        document.getElementById("pet-raca").textContent = raçaPet;
+        document.getElementById("pet-peso").textContent = pesoPet;
+        document.getElementById("pet-idade").textContent = idadePet;
+        document.getElementById("cpfDono").textContent = cpfDono;
+    } else {
+        // Caso não existam dados no localStorage, exibe uma mensagem
+        document.getElementById("pet-nome").textContent = "Nenhum dado encontrado.";
+        document.getElementById("pet-raca").textContent = "Nenhum dado encontrado.";
+        document.getElementById("pet-peso").textContent = "Nenhum dado encontrado.";
+        document.getElementById("pet-idade").textContent = "Nenhum dado encontrado.";
+        document.getElementById("cpfDono").textContent = "Nenhum dado encontrado.";
+    }
+}
+
+// Ao clicar no botão de "Perfil Cachorro", abre o modal e preenche com os dados
+perfilDogButton.addEventListener("click", () => {
+    preencherDadosDoModal(); // Preenche os dados no modal
+    perfilDogmodal.style.display = "block"; // Exibe o modal
+});
+
+// Fechar o modal ao clicar no botão de fechar
+closeDogPerfilmodal.addEventListener("click", () => {
+    perfilDogmodal.style.display = "none"; // Fecha o modal
+});
+
+// Ao clicar no botão de "Perfil Cachorro", abre o modal e preenche com os dados
+perfilDogButton.addEventListener("click", () => {
+    preencherDadosDoModal(); // Preenche os dados no modal
+    perfilDogmodal.style.display = "block"; // Exibe o modal
+});
+
+// Fechar o modal ao clicar no botão de fechar
+closeDogPerfilmodal.addEventListener("click", () => {
+    perfilDogmodal.style.display = "none"; // Fecha o modal
+});
+
+// Caso o modal precise ser fechado automaticamente ao carregar a página ou se existirem outros modais, você pode usar algo como:
+function closeAllModals() {
+    const allModals = document.querySelectorAll('.modal');
+    allModals.forEach(modal => modal.style.display = 'none');
+}
+
+
+</script>
+    <script type="module"src="/js/apicontroller.js"></script>
+    <script type="module" src="/js/modalCliente.js"></script>
+    <script src="/js/logout.js"></script>
+    <script src="/js/latmenu.js"></script>
+    <script type="module" src="/js/petRegister.js"></script>
+    <script> 
+    document.getElementById('logout-btn').addEventListener('click', (event) => {
+    logoutUser(); // Chama a função de logout
+    alert('Logout feito com sucesso!');
+});
+    </script>
+</body>
+</html>
